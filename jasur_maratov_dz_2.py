@@ -6,16 +6,13 @@
  сумма цифр которых делится нацело на 7.
 * Решить задачу под пунктом b, не создавая новый список.'''
 
-# my_lists = [num ** 3 for num in range(1, 1001, 2) f]
-for i in range(100):
-    new_str=str(i+1)
-    new_list = list(new_str)
-    if int(new_list[-1])==1 and i+1!=11:
-        print('{} процент'.format(i + 1))
-    elif int(new_list[-1])>1 and int(new_list[-1])<= 4:
-        if  i+1> 10 and i+1<= 14:
-            print('{} процентов'.format(i + 1))
-        else:
-            print('{} процента'.format(i + 1))
-    else:
-        print('{} процентов'.format(i + 1))
+my_list = [(num ** 3)+17 for num in range(1, 1001, 2)]
+
+final_sum = 0
+for num in my_list:
+    check_sum = 0
+    for check_num in str(num):
+        check_sum += int(check_num)
+    if check_sum % 7 == 0:
+        final_sum += num
+print(final_sum)
